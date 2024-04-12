@@ -2,18 +2,20 @@ import { Link } from "react-router-dom";
 import styles from './MovieCard.module.scss';
 
 interface MovieCardProps {
-  id: number,
-  title: string,
-  overview: string,
-  popularity: number,
+  id: number;
+  title: string;
+  overview: string;
+  popularity: number;
+  image?: string;
 }
 
-export function Moviecard({ id, title, overview, popularity }: MovieCardProps) {
+export function Moviecard({ id, title, overview, popularity, image = "/logo512.png" }: MovieCardProps) {
   return (
     <div className={styles.card}>
       <img
         className={styles.thumbnail}
-        src="/logo512.png"
+        // src="/logo512.png"
+        src={image}
         alt="Movie thumbnail"
       />
       <div className={styles.content}>
