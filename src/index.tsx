@@ -13,15 +13,25 @@ import { About } from './features/About/About';
 import Movies from './features/Movies/Movies';
 import { Provider } from 'react-redux';
 import store from './store';
+import { Home } from './features/Home/Home';
+
+function AppEntrypoint() {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  )
+}
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:
-      <Provider store={store}>
-        <App />
-      </Provider>,
+    element: <AppEntrypoint />,
     children: [
+      {
+        path: "/",
+        element: <Home />
+      },
       {
         path: "/about",
         element: <About />,
