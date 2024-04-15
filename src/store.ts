@@ -8,6 +8,7 @@ const composedEnhancer = composeWithDevTools(applyMiddleware(thunk));
 const store = createStore(rootReducer, composedEnhancer);
 
 export type AppDispatch = typeof store.dispatch;
+export type AppSelector = typeof store.selector;
 
 export type AppThunk<ReturnType> = ThunkAction<
     ReturnType,
