@@ -12,11 +12,11 @@ function Copyright() {
 }
 
 export function Home() {
-  const {user} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const loggedIn = user != anonymusUser;
   const username = user.name
-  
-  const greeting = loggedIn ? `Hello,${username},explore movies today with us!` : 'explore movies today with us!'
+
+  const greeting = loggedIn ? `Hello,${username},explore movies today with us!` : 'explore movies today with us!';
 
   return (
     <Box sx={{ bgcolor: "background.paper", pt: 8, pb: 8 }}>
